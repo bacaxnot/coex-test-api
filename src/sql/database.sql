@@ -9,6 +9,7 @@ CREATE TABLE medicines(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255), 
     detail TEXT,
+    quantity INT(10),
     admin_route VARCHAR(255),
     untaxed_price FLOAT(10,2),
     taxes_pctge FLOAT(10, 2) DEFAULT 19,
@@ -46,12 +47,12 @@ CREATE TABLE sales_detail(
     FOREIGN KEY (medicine_id) REFERENCES medicines(id)
 );
 -- seeding
-INSERT INTO medicines (name, detail, admin_route, untaxed_price, taxes_pctge)
+INSERT INTO medicines (name, detail, quantity, admin_route, untaxed_price, taxes_pctge)
 VALUES
-    ('Vitamina C', 'Caja Con 10 Tiras De Tabletas Masticables C/U - Sabor Mandarina', 'oral', 49400, 19),
-    ('Ibuprofeno + Metocarbamol 200/500 mg', 'Caja Con 30 Tabletas Recubiertas', 'oral', 30400, 5),
-    ('Noxpirin Plus', 'Caja con 12 Cápsulas COL', 'oral', 12475, 0),
-    ('Sal De Frutas Lua Pus Polvo Citrus', 'Caja Con 6 Sobres', 'oral', 16150, 19);
+    ('Vitamina C', 'Caja Con 10 Tiras De Tabletas Masticables C/U - Sabor Mandarina', 20, 'oral', 49400, 19),
+    ('Ibuprofeno + Metocarbamol 200/500 mg', 'Caja Con 30 Tabletas Recubiertas', 20, 'oral', 30400, 5),
+    ('Noxpirin Plus', 'Caja con 12 Cápsulas COL', 20, 'oral', 12475, 0),
+    ('Sal De Frutas Lua Pus Polvo Citrus', 'Caja Con 6 Sobres', 20, 'oral', 16150, 19);
 INSERT INTO images (medicine_id, image_url)
 VALUES
     (1, 'https://colsubsidio.vteximg.com.br/arquivos/ids/160940/7703763750184.jpg?v=637111981051900000'),
