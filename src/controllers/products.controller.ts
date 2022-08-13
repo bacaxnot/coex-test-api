@@ -5,6 +5,6 @@ const table: string = 'medicines'
 
 export async function getProducts(_req: Request, res: Response) {
     const conn = await connect()
-    const products = await conn.query(`SELECT * FROM ${table}`)
+    const products = await conn.query(`SELECT * FROM ${table} WHERE quantity > 0`)
     return res.json(products[0])
 }
