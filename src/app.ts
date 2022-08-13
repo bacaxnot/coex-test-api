@@ -5,6 +5,7 @@ import morgan from 'morgan'
 import IndexRoutes from "./routes/index.routes"
 import ProductsRoutes from "./routes/products.routes"
 import SalesRoutes from "./routes/sales.routes"
+import ImagesRoutes from "./routes/images.routes"
 
 export class App {
     private app: Application
@@ -26,6 +27,7 @@ export class App {
         this.app.use('/v1', IndexRoutes)
         this.app.use('/v1/products', ProductsRoutes)
         this.app.use('/v1/sales', SalesRoutes)
+        this.app.use('/v1/images', ImagesRoutes)
     }
     async listen(){
         let PORT = this.app.get('port')
