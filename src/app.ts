@@ -2,6 +2,8 @@
 import express, { Application } from 'express'
 import morgan from 'morgan'
 // routes
+import IndexRoutes from "./routes/index.routes"
+import ProductsRoutes from "./routes/products.routes"
 
 export class App {
     private app: Application
@@ -20,6 +22,8 @@ export class App {
         this.app.use(morgan('dev'))
     }
     routes(){
+        this.app.use('/v1', IndexRoutes)
+        this.app.use('/v1/products', ProductsRoutes)
     }
     async listen(){
         let PORT = this.app.get('port')
