@@ -50,7 +50,7 @@ INSERT INTO medicines (name, detail, admin_route, untaxed_price, taxes_pctge)
 VALUES
     ('Vitamina C', 'Caja Con 10 Tiras De Tabletas Masticables C/U - Sabor Mandarina', 'oral', 49400, 19),
     ('Ibuprofeno + Metocarbamol 200/500 mg', 'Caja Con 30 Tabletas Recubiertas', 'oral', 30400, 5),
-    ('Noxpirin Plus', 'Caja con 12 Cápsulas COL', 'oral', 12475, 19),
+    ('Noxpirin Plus', 'Caja con 12 Cápsulas COL', 'oral', 12475, 0),
     ('Sal De Frutas Lua Pus Polvo Citrus', 'Caja Con 6 Sobres', 'oral', 16150, 19);
 INSERT INTO images (medicine_id, image_url)
 VALUES
