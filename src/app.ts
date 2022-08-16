@@ -1,6 +1,7 @@
 // libraries
 import express, { Application } from 'express'
 import morgan from 'morgan'
+import cors from 'cors'
 // routes
 import IndexRoutes from "./routes/index.routes"
 import ProductsRoutes from "./routes/products.routes"
@@ -21,6 +22,7 @@ export class App {
     }
     middlewares(){
         this.app.use(express.json())
+        this.app.use(cors())
         this.app.use(morgan('dev'))
     }
     routes(){
